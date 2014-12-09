@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.acme.kmiddleware</groupId>
+    <artifactId>wshop-shopping-domain</artifactId>
+
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <name>Wshop Middleware :: Shopping domain</name>
+
+    <description>
+    </description>
+
+    <modules>
+        <module>wshop-frontend</module>
+        <module>shopping-business</module>
+
+        <module>order-backend</module>
+        <module>basket-backend</module>
+        <module>promotions-backend</module>
+    </modules>
+
+</project>

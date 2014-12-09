@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>backend-component</artifactId>
+    <packaging>bundle</packaging>
+
+    <name>Middleware Framework :: Backend Component</name>
+
+    <parent>
+        <groupId>com.acme.middleware.framework</groupId>
+        <artifactId>framework-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../framework-parent/pom.xml</relativePath>
+    </parent>
+
+    <properties>
+        <osgi-export-package>com.acme.middleware.framework.backend</osgi-export-package>
+        <osgi-import-package>org.apache.camel.builder</osgi-import-package>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.acme.middleware.framework</groupId>
+            <artifactId>component</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

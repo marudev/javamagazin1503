@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.acme.wshop.middleware</groupId>
+    <artifactId>wshop-parent</artifactId>
+
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <name>Wshop Middleware :: Parent</name>
+
+    <properties>
+        <source.version>1.7</source.version>
+        <!--<camel.version>2.10.4</camel.version>-->
+        <target.version>1.7</target.version>
+        <osgi-import-package>*</osgi-import-package>
+        <osgi-private-package></osgi-private-package>
+        <osgi-export-package></osgi-export-package>
+        <osgi-require-bundle></osgi-require-bundle>
+    </properties>
+
+    <build>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${source.version}</source>
+                    <target>${target.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Import-Package>${osgi-import-package}</Import-Package>
+                        <Export-Package>${osgi-export-package}</Export-Package>
+                        <Private-Package>${osgi-private-package}</Private-Package>
+                        <Require-Bundle>${osgi-require-bundle}</Require-Bundle>
+                        <Include-Resource>{maven-resources}</Include-Resource>
+                        <!--<Bundle-Description>${bundle-description}</Bundle-Description>-->
+                        <!--<_failok>${bundle-failok}</_failok>-->
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-test</artifactId>
+            <version>2.10.4</version><!-- given by framework -->
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>xmlunit</groupId>
+            <artifactId>xmlunit</artifactId>
+            <version>1.6</version>
+            <scope>test</scope>
+        </dependency>
+
+
+    </dependencies>
+
+</project>

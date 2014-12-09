@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.acme.wshop.middleware</groupId>
+        <artifactId>wshop-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../wshop-parent/pom.xml</relativePath>
+    </parent>
+    <artifactId>basket-backend</artifactId>
+
+    <packaging>bundle</packaging>
+
+    <name>Wshop Middleware :: Shopping domain :: Backend :: Basket</name>
+
+    <properties>
+        <osgi-import-package>
+            com.acme.wshop.middleware.api.shopping.interfaces,
+            org.apache.camel.builder,
+            *
+        </osgi-import-package>
+        <!--<osgi-private-package></osgi-private-package>-->
+        <osgi-export-package>com.acme.wshop.middleware.shopping.backend.order.routes</osgi-export-package>
+        <!--<osgi-require-bundle></osgi-require-bundle>-->
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.acme.middleware.framework</groupId>
+            <artifactId>backend-component</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.acme.wshop.middleware</groupId>
+            <artifactId>wshop-cdm</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
+    </dependencies>
+</project>

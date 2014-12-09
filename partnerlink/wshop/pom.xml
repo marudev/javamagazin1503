@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>wshop-partnerlink</artifactId>
+	<packaging>bundle</packaging>
+
+	<name>Wshop Middleware :: Partnerlink : Wshop</name>
+
+    <parent>
+        <groupId>com.acme.wshop.middleware</groupId>
+        <artifactId>wshop-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../../wshop-parent/pom.xml</relativePath>
+    </parent>
+
+    <properties>
+        <osgi-import-package>*</osgi-import-package>
+        <osgi-private-package></osgi-private-package>
+        <osgi-export-package>com.acme.wshop.middleware.api.shopping.dto, com.acme.wshop.middleware.api.shopping.interfaces</osgi-export-package>
+        <osgi-require-bundle></osgi-require-bundle>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>jsr311-api</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.10</version>
+        </dependency>
+
+
+    </dependencies>
+
+</project>
